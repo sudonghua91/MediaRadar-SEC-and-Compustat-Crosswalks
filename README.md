@@ -3,21 +3,21 @@ This crosswalk was derived by setting JW distance ⩽ 1% to keep my sample free 
 
 We follow a few steps working on the proprietary advertising data:
 
-Download advertising data from MediaRadar from 2015-2023. Summarize the total media expense (sum of network television, spot television, cable television networks, syndicated television, Spanish-language network television, local radio, national spot radio, network radio, magazine, Sunday magazine, local magazine, Spanish-language magazine, business publication, newspaper, national newspaper, Spanish-language newspaper, outdoor, and internet display) of top 1000 firms ranked by media dollar from Ad$pender (Kantar Media) for 2009-2014. Download SEC-CIK-GVKEY link from WRDS.
+1. Download advertising data from MediaRadar from 2015-2023. Summarize the total media expense (sum of network television, spot television, cable television networks, syndicated television, Spanish-language network television, local radio, national spot radio, network radio, magazine, Sunday magazine, local magazine, Spanish-language magazine, business publication, newspaper, national newspaper, Spanish-language newspaper, outdoor, and internet display) of top 1000 firms ranked by media dollar from Ad$pender (Kantar Media) for 2009-2014. Download SEC-CIK-GVKEY link from WRDS.
 
-Fuzzy match between MediaRadar's firm names and SEC's firm names using the R codes.
+2. Fuzzy match between MediaRadar's firm names and SEC's firm names using the R codes.
 We do this for each year. Generate "match1_year.dta" - "match14_year.dta" due to the limitation of R's memory size and then append for each year in Stata. (See
 Stata codes)
 
-In R, we need to merge original data with clean names for each year for both MediaRadar (with ad info) and SEC (with GVKEY).
+3. In R, we need to merge original data with clean names for each year for both MediaRadar (with ad info) and SEC (with GVKEY).
 
-Drop name duplicates for each year. Duplicates are sometimes due to subsidiaries of a parent. We sum ad expenses for each GVKEY considering only parent firms.
+4. Drop name duplicates for each year. Duplicates are sometimes due to subsidiaries of a parent. We sum ad expenses for each GVKEY considering only parent firms.
 
-Merge original MediaRadar and SEC filings to the matched names.
+5. Merge original MediaRadar and SEC filings to the matched names.
 
-Go to fill these values into the missing values in Compustat. Drop those observations not included in Compustat.
+6. Go to fill these values into the missing values in Compustat. Drop those observations not included in Compustat.
 
-Reference:
+References:
 
 Seo, T. (2025). Two Persistent Trees: Advertising and the Cross Section of Equity Returns.
 
