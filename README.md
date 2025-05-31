@@ -22,3 +22,5 @@ References:
 Seo, T. (2025). Two Persistent Trees: Advertising and the Cross Section of Equity Returns.
 
 Liang C. Advertising rivalry and discretionary disclosure[J]. Journal of Accounting and Economics, 2024, 77(1): 101611.
+
+Stata and R codes are available upon request. Welcome any comments!
