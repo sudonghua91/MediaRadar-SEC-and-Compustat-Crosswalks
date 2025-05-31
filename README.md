@@ -1,9 +1,9 @@
 # MediaRadar-SEC-and-Compustat-Crosswalks
 This crosswalk was derived by setting JW distance ⩽ 1% to keep my sample free from any erroneous matches. This is also a caveat as errors depend on what sample you are using. You will also need to balance the number of matches and the degree of inconsistency. The punch line is that we need to keep firm names matched right.
 
-We follow a few steps working on the proprietary advertising data:
+We follow a few steps working on the proprietary advertising and firm-level data:
 
-1. Download advertising data from MediaRadar from 2015-2023. Summarize the total media expense (sum of network television, spot television, cable television networks, syndicated television, Spanish-language network television, local radio, national spot radio, network radio, magazine, Sunday magazine, local magazine, Spanish-language magazine, business publication, newspaper, national newspaper, Spanish-language newspaper, outdoor, and internet display) of top 1000 firms ranked by media dollar from Ad$pender (Kantar Media) for 2009-2014. Download SEC-CIK-GVKEY link from WRDS.
+1. Download advertising data from MediaRadar from 2015-2023. Summarize the total media expense (sum of network television, spot television, cable television networks, syndicated television, Spanish-language network television, local radio, national spot radio, network radio, magazine, Sunday magazine, local magazine, Spanish-language magazine, business publication, newspaper, national newspaper, Spanish-language newspaper, outdoor, and internet display) of top 1000 firms ranked by media dollar from Ad$pender (Kantar Media) for 2009-2014. Download SEC-CIK-GVKEY link from WRDS (the SEC Analytics Suite).
 
 2. Fuzzy match between MediaRadar's firm names and SEC's firm names using the R codes.
 We do this for each year. Generate "match1_year.dta" - "match14_year.dta" due to the limitation of R's memory size and then append for each year in Stata. (See
